@@ -42,6 +42,8 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin Management';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -73,13 +75,6 @@ class UserResource extends Resource
                         ->columns(2)
                         ->helperText('Only Choose One!')
                         ->required()
-                    // BelongsToMany::make('Roles')
-                    //     ->options(Role::pluck('roles', 'name'))
-                    //     ->help('Only Choose One!')
-                    //     ->rules('required')
-                    //     ->columns(2)
-                    //     ->helperText('Only Choose One!')
-                    //     ->required()
             ]);
 
     }
